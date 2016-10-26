@@ -22,13 +22,14 @@ class App extends Component {
     };
   }
   render() {
+    const array = [1, 2, 3];
     return (
       <div className="App">
         <div className="App-header">
           <h1> {this.state.title} </h1>
         </div>
 
-        <Week />
+        <Week links={array} />
 
       </div>
     );
