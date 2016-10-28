@@ -3,13 +3,19 @@ import React, { Component } from 'react';
 class Week extends Component {
 
   render() {
-    const linkMap = this.props.links.map((link, idx) => {
-      return <li key={idx}> {link} </li>;
+    console.log(this.props.entries);
+    const linkMap = this.props.entries.map((item, id) => {
+      return (
+        <ul key={id}>
+          <li>{item.title}</li>
+          <li>{item.link}</li>
+        </ul>
+      );
     });
     return(
-      <ul>
+      <div>
         {linkMap}
-      </ul>
+      </div>
     );
   }
 }
