@@ -115,11 +115,15 @@ class App extends Component {
   }
 
   render() {
-    //array to test passing a value to child compoonent
     return (
       <div className="App">
+        <h1>Week 1</h1>
         <Week entries={this.state.week1} />
+
+        <h1>Week 2</h1>
         <Week entries={this.state.week2} />
+        
+        <h1>Week 3</h1>
         <Week entries={this.state.week3} />
       </div>
     );
