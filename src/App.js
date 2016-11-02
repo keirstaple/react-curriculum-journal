@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Week from './Week';
+import Header from './Header';
 
 class App extends Component {
   constructor() {
@@ -124,6 +125,10 @@ class App extends Component {
           title: 'ReactJS Basics',
           link: 'https://www.youtube.com/watch?v=OcM__8q6p4c&list=PL55RiY5tL51oyA8euSROLjMFZbXaV7skS&index=8',
         },
+        {
+          title: '8 no-Flux strategies for React component communication',
+          link: 'http://andrewhfarmer.com/component-communication/',
+        },
       ],
     };
   }
@@ -131,16 +136,18 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>Week 1</h1>
+        <Header />
+
+        <h3>Week 1</h3>
         <Week entries={this.state.week1} />
 
-        <h1>Week 2</h1>
+        <h3>Week 2</h3>
         <Week entries={this.state.week2} />
 
-        <h1>Week 3</h1>
+        <h3>Week 3</h3>
         <Week entries={this.state.week3} />
 
-        <h1>Week 4</h1>
+        <h3>Week 4</h3>
         <Week entries={this.state.week4} />
       </div>
     );
