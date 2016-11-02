@@ -6,6 +6,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
+      // name: "Keir Staple",
       week1: [
         {
           title: 'JavaScript Assessment',
@@ -136,7 +137,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
+        <Header myName="Keir Staple" />
 
         <h3>Week 1</h3>
         <Week entries={this.state.week1} />
