@@ -7,7 +7,7 @@ class Week extends Component {
       return (
         <ul key={id}>
           <li>{item.title}</li>
-          <li><a href={item.link}>{item.link}</a></li>
+          <li><a href={item.link} target="_blank">{item.link}</a></li>
         </ul>
       );
     });

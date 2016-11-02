@@ -111,6 +111,20 @@ class App extends Component {
           link: 'https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi',
         },
       ],
+      week4: [
+        {
+          title: 'Handling Events',
+          link: 'https://facebook.github.io/react/docs/handling-events.html',
+        },
+        {
+          title: 'React Stateless Functional Components: Nine Wins You Might Have Overlooked',
+          link: 'https://medium.com/@housecor/react-stateless-functional-components-nine-wins-you-might-have-overlooked-997b0d933dbc#.kvftfyi7m',
+        },
+        {
+          title: 'ReactJS Basics',
+          link: 'https://www.youtube.com/watch?v=OcM__8q6p4c&list=PL55RiY5tL51oyA8euSROLjMFZbXaV7skS&index=8',
+        },
+      ],
     };
   }
 
@@ -122,9 +136,12 @@ class App extends Component {
 
         <h1>Week 2</h1>
         <Week entries={this.state.week2} />
-        
+
         <h1>Week 3</h1>
         <Week entries={this.state.week3} />
+
+        <h1>Week 4</h1>
+        <Week entries={this.state.week4} />
       </div>
     );
   }
