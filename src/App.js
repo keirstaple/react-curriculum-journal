@@ -130,6 +130,10 @@ class App extends Component {
           title: '8 no-Flux strategies for React component communication',
           link: 'http://andrewhfarmer.com/component-communication/',
         },
+        {
+          title: 'Javascript Events & Data Changes in React',
+          link: 'https://www.youtube.com/watch?v=_D1JGNidMr4&feature=youtu.be',
+        },
       ],
     };
   }
