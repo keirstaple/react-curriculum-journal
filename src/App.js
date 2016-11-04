@@ -6,7 +6,6 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      // name: "Keir Staple",
       week1: [
         {
           title: 'JavaScript Assessment',
