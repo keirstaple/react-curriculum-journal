@@ -7,7 +7,7 @@ class SubHeader extends Component {
   }
 
   changeHeaderColor() {
-    this.headerColor = "red";
+    this.headerColor = '#'+Math.floor(Math.random()*16777215).toString(16);
     this.props.changeColor(this.headerColor);
   }
 
