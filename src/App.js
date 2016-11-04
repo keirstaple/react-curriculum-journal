@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
 import Week from './Week';
 import Header from './Header';
+import SubHeader from './SubHeader';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
+      headerColor: 'blue',
       week1: [
         {
           title: 'JavaScript Assessment',
@@ -137,10 +139,16 @@ class App extends Component {
     };
   }
 
+  changeColor(headerColor) {
+    this.setState({headerColor});
+  }
+
   render() {
     return (
       <div className="App">
         <Header myName="Keir Staple" />
+
+        <SubHeader changeColor={this.changeColor.bind(this)} headerColor={this.state.headerColor} />
 
         <h3>Week 1</h3>
         <Week entries={this.state.week1} />
