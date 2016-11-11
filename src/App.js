@@ -137,10 +137,21 @@ class App extends Component {
         },
       ],
     };
+    this.changeColor = this.changeColor.bind(this);
+    this.addTitle = this.addTitle.bind(this);
+    this.addLink = this.addLink.bind(this);
   }
 
   changeColor(headerColor) {
     this.setState({headerColor});
+  }
+
+  addTitle(title) {
+    this.setState({});
+  }
+
+  addLink(link) {
+    this.setState({});
   }
 
   render() {
@@ -148,19 +159,19 @@ class App extends Component {
       <div className="App">
         <Header myName="Keir Staple" />
 
-        <SubHeader changeColor={this.changeColor.bind(this)} headerColor={this.state.headerColor} />
+        <SubHeader changeColor={this.changeColor} headerColor={this.state.headerColor} />
 
         <h3>Week 1</h3>
-        <Week entries={this.state.week1} />
+        <Week entries={this.state.week1} addTitle={this.addTitle} addLink={this.addLink} />
 
         <h3>Week 2</h3>
-        <Week entries={this.state.week2} />
+        <Week entries={this.state.week2} addTitle={this.addTitle} addLink={this.addLink} />
 
         <h3>Week 3</h3>
-        <Week entries={this.state.week3} />
+        <Week entries={this.state.week3} addTitle={this.addTitle} addLink={this.addLink} />
 
         <h3>Week 4</h3>
-        <Week entries={this.state.week4} />
+        <Week entries={this.state.week4} addTitle={this.addTitle} addLink={this.addLink} />
       </div>
     );
   }
