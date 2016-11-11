@@ -7,19 +7,26 @@ class NewResource extends Component {
       <div>
         <label> Title: </label>
         <input
-          onChange={this.props.handleInputChange}
           value={this.props.titleValue}
+          placeholder={this.props.titleValue}
+          name={'titleValue'}
+          onChange={this.props.handleInputChange}
         />
 
         <label> Link URL: </label>
         <input
-          onChange={this.props.handleInputChange}
           value={this.props.linkValue}
+          placeholder={this.props.linkValue}
+          name={'linkValue'}
+          onChange={this.props.handleInputChange}
         />
 
         <label>Week: </label>
         <select
-          value={this.props.optionValue} onChange={this.props.handleInputChange}>
+          value={this.props.optionValue}
+          placeholder={this.props.optionValue}
+          name={'optionValue'}
+          onChange={this.props.handleInputChange}>
             <option value="week1">Week 1</option>
             <option value="week2">Week 2</option>
             <option value="week3">Week 3</option>
