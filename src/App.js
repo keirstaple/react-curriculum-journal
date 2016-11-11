@@ -2,12 +2,16 @@ import React, { Component } from 'react';
 import Week from './Week';
 import Header from './Header';
 import SubHeader from './SubHeader';
+import NewResource from './NewResource';
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
       headerColor: 'blue',
+      titleValue: '',
+      linkValue: '',
+      optionValue: 'week4',
       week1: [
         {
           title: 'JavaScript Assessment',
@@ -138,40 +142,71 @@ class App extends Component {
       ],
     };
     this.changeColor = this.changeColor.bind(this);
-    this.addTitle = this.addTitle.bind(this);
-    this.addLink = this.addLink.bind(this);
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.addResource = this.addResource.bind(this);
   }
 
   changeColor(headerColor) {
     this.setState({headerColor});
   }
 
-  addTitle(title) {
-    this.setState({});
+  addResource() {
+    const newEntry = {
+      title: this.state.titleValue,
+      link: this.state.linkValue,
+    };
+    const selectedWeek = this.state.optionValue;
+    const newWeek = this.state[selectedWeek].concat(newEntry);
+    this.setState({
+      titleValue: '',
+      linkValue: '',
+      [selectedWeek]: newWeek,
+    });
   }
 
-  addLink(link) {
-    this.setState({});
+  handleInputChange(event) {
+    this.setState({ [event.target.name]: event.target.value });
   }
 
   render() {
     return (
       <div className="App">
-        <Header myName="Keir Staple" />
+        <Header
+          myName="Keir Staple"
+        />
 
-        <SubHeader changeColor={this.changeColor} headerColor={this.state.headerColor} />
+        <SubHeader
+          changeColor={this.changeColor}
+          headerColor={this.state.headerColor}
+        />
 
-        <h3>Week 1</h3>
-        <Week entries={this.state.week1} addTitle={this.addTitle} addLink={this.addLink} />
+        <NewResource
+          titleValue={this.state.titleValue}
+          linkValue={this.state.linkValue}
+          optionValue={this.state.optionValue}
+          handleInputChange={this.handleInputChange}
+          addResource={this.addResource}
+        />
 
-        <h3>Week 2</h3>
-        <Week entries={this.state.week2} addTitle={this.addTitle} addLink={this.addLink} />
+        <Week
+          title="Week 1"
+          entries={this.state.week1}
+        />
 
-        <h3>Week 3</h3>
-        <Week entries={this.state.week3} addTitle={this.addTitle} addLink={this.addLink} />
+        <Week
+          title="Week 2"
+          entries={this.state.week2}
+        />
 
-        <h3>Week 4</h3>
-        <Week entries={this.state.week4} addTitle={this.addTitle} addLink={this.addLink} />
+        <Week
+          title="Week 3"
+          entries={this.state.week3}
+        />
+
+        <Week
+          title="Week 4"
+          entries={this.state.week4}
+        />
       </div>
     );
   }
