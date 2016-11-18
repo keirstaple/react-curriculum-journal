@@ -3,6 +3,12 @@ import React, { Component } from 'react';
 class NewResource extends Component {
 
   render() {
+    const optionMap = this.props.weeks.map((item, id) => {
+      const title = "Week " + (id+1);
+      return(
+        <option value={id} key={id}>{title}</option>
+      );
+    });
     return(
       <div>
         <label> Title: </label>
@@ -27,10 +33,7 @@ class NewResource extends Component {
           placeholder={this.props.optionValue}
           name={'optionValue'}
           onChange={this.props.handleInputChange}>
-            <option value="week1">Week 1</option>
-            <option value="week2">Week 2</option>
-            <option value="week3">Week 3</option>
-            <option value="week4">Week 4</option>
+            {optionMap}
         </select>
 
         <button className="btn btn-primary"

@@ -10,7 +10,7 @@ class App extends Component {
     this.state = {
       titleValue: '',
       linkValue: '',
-      optionValue: 'week4',
+      optionValue: '3',
       courseWeeks: [
         {
           week: [
@@ -156,8 +156,6 @@ class App extends Component {
   }
 
   handleInputChange(event) {
-    console.log(event.target.name);
-    console.log(event.target.value);
     this.setState({ [event.target.name]: event.target.value });
   }
 
@@ -166,17 +164,24 @@ class App extends Component {
       title: this.state.titleValue,
       link: this.state.linkValue,
     };
-    const selectedWeek = this.state.optionValue;
-    const newWeek = this.state[selectedWeek].concat(newEntry);
+    const idx = parseInt(this.state.optionValue, 10);
+
+    const theCourseWeeks = [ ...this.state.courseWeeks ];
+
+    const updatedWeek = theCourseWeeks[idx].week.concat(newEntry);
+    theCourseWeeks[idx].week = updatedWeek;
+
     this.setState({
-      titleValue: '',
-      linkValue: '',
-      [selectedWeek]: newWeek,
+      courseWeeks: theCourseWeeks,
     });
   }
 
   addWeek() {
+    // const newWeek =
+  }
 
+  console() {
+    console.log(this.state.courseWeeks[0].week)
   }
 
   render() {
@@ -190,6 +195,7 @@ class App extends Component {
           titleValue={this.state.titleValue}
           linkValue={this.state.linkValue}
           optionValue={this.state.optionValue}
+          weeks={this.state.courseWeeks}
           handleInputChange={this.handleInputChange}
           addResource={this.addResource}
         />
@@ -201,6 +207,8 @@ class App extends Component {
         <WeekList
           weeks={this.state.courseWeeks}
         />
+
+      <button onClick={this.console.bind(this)}>click</button>
       </div>
     );
   }
