@@ -169,6 +169,7 @@ class App extends Component {
     const theCourseWeeks = [ ...this.state.courseWeeks ];
 
     const updatedWeek = theCourseWeeks[idx].week.concat(newEntry);
+
     theCourseWeeks[idx].week = updatedWeek;
 
     this.setState({
@@ -177,7 +178,17 @@ class App extends Component {
   }
 
   addWeek() {
-    // const newWeek =
+    const newWeek = {
+      week: [],
+    };
+
+    const theCourseWeeks = [ ...this.state.courseWeeks ];
+
+    theCourseWeeks.push(newWeek);
+
+    this.setState({
+      courseWeeks: theCourseWeeks,
+    });
   }
 
   console() {
