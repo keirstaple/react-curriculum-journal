@@ -10,7 +10,7 @@ class App extends Component {
     this.state = {
       titleValue: '',
       linkValue: '',
-      optionValue: '3',
+      optionValue: '',
       courseWeeks: [
         {
           week: [
@@ -191,10 +191,6 @@ class App extends Component {
     });
   }
 
-  console() {
-    console.log(this.state.courseWeeks[0].week)
-  }
-
   render() {
     return (
       <div className="App">
@@ -211,15 +207,13 @@ class App extends Component {
           addResource={this.addResource}
         />
 
+        <hr></hr>
         <NewWeek
           addWeek={this.addWeek}
         />
-
         <WeekList
           weeks={this.state.courseWeeks}
         />
-
-      <button onClick={this.console.bind(this)}>click</button>
       </div>
     );
   }
