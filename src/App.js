@@ -10,7 +10,7 @@ class App extends Component {
     this.state = {
       titleValue: '',
       linkValue: '',
-      optionValue: '',
+      optionValue: '0',
       courseWeeks: [
         {
           week: [
