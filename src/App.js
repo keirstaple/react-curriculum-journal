@@ -179,9 +179,10 @@ class App extends Component {
 
   addWeek() {
     const newWeek = {
-      week: [],
+      week: [ ],
     };
 
+    //makes a copy of courseWeeks array in state object using spread operator
     const theCourseWeeks = [ ...this.state.courseWeeks ];
 
     theCourseWeeks.push(newWeek);

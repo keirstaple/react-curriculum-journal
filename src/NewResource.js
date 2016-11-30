@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import newResourceStyles from './styles/newResourceStyles';
 
 class NewResource extends Component {
 
@@ -10,7 +11,7 @@ class NewResource extends Component {
       );
     });
     return(
-      <div>
+      <div style={newResourceStyles}>
         <label> Title: </label>
         <input
           value={this.props.titleValue}
